@@ -37,7 +37,7 @@ class AudioGen(BaseGenModel):
         self.set_generation_params(duration=5)  # default duration
 
     @staticmethod
-    def get_pretrained(name: str = 'facebook/audiogen-medium', device=None):
+    def get_pretrained(name, device=None):
         """Return pretrained model, we provide a single model for now:
         - facebook/audiogen-medium (1.5B), text to sound,
           # see: https://huggingface.co/facebook/audiogen-medium

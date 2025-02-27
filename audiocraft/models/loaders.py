@@ -60,15 +60,7 @@ def _get_state_dict(
         return torch.hub.load_state_dict_from_url(file_or_url_or_id, map_location=device, check_hash=True)
 
     else:
-        assert filename is not None, "filename needs to be defined if using HF checkpoints"
-        file = hf_hub_download(
-            repo_id=file_or_url_or_id,
-            filename=filename,
-            cache_dir=cache_dir,
-            library_name="audiocraft",
-            library_version=audiocraft.__version__,
-        )
-        return torch.load(file, map_location=device)
+        return None
 
 
 def load_compression_model_ckpt(file_or_url_or_id: tp.Union[Path, str], cache_dir: tp.Optional[str] = None):
